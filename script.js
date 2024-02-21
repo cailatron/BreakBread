@@ -1,11 +1,13 @@
 brokenBread = 0;
 totalBread = 0;
 
-breakingPower = 1
+breakingPower = 500;
 bakers = 0;
 bakerCost = 5;
 millers = 0;
 millerCost = 15;
+the5000 = 0;
+the5000Cost = 5000;
 
 // the basic button 
  function breakBread(){
@@ -30,6 +32,8 @@ function giveBaker(){
   }
 }
 
+
+
 //give bread to miller button
 function giveMiller(){
   if (brokenBread >= millerCost){
@@ -45,6 +49,21 @@ function giveMiller(){
 }
 
 
+//give bread to the5000 button
+function giveThe5000(){
+  if (brokenBread >= the5000Cost){
+    brokenBread = brokenBread - the5000Cost;
+    the5000 = the5000 + 1;
+
+    document.getElementById("brokenBreadID").innerHTML = brokenBread;
+    document.getElementById("the5000ID").innerHTML = the5000;
+    //not sure i need this 'cause im not changing it rn
+    document.getElementById("the5000CostID").innerHTML = the5000Cost;
+
+  }
+}
+
+
 setInterval(function(){
   // This is the code that runs every second
   // fancy math is so that it round to 0.01 place
@@ -55,9 +74,13 @@ setInterval(function(){
   // ===== Millers Effect =====
   brokenBread = Math.round((brokenBread + (millers*0.5)) * 100) / 100;
   totalBread = Math.round((totalBread + (millers*0.5)) * 100) / 100;
+  // ===== The 5000 Effect =====
+  brokenBread = Math.round((brokenBread + (the5000*144)) * 100) / 100;
+  totalBread = Math.round((totalBread + (the5000*144)) * 100) / 100;
   
 
   //updating the display of # of broken bread and total
   document.getElementById("brokenBreadID").innerHTML = brokenBread;
   document.getElementById("totalBreadID").innerHTML = totalBread;
+
 }, 1000) //1000ms = 1 second

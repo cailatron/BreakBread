@@ -1,3 +1,1 @@
-Idk, the tutorial im following showed a readme so here is a read me 
-
-fun fact: killer whales are considered dolphins 
+idk why the top of the page says "replit". i downloaded the files from replit. where do i change that?

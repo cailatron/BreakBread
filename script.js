@@ -1,7 +1,7 @@
 brokenBread = 0;
 totalBread = 0;
 
-breakingPower = 500;
+breakingPower = 2;
 bakers = 0;
 bakerCost = 5;
 millers = 0;
